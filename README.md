@@ -8,7 +8,6 @@
 ### Association
 - has_many :posts
 - belongs_to :group
-
 ## postsテーブル
 |Column|Type|Options|
 |------|----|-------|
