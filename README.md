@@ -8,15 +8,3 @@
 ### Association
 - has_many :posts
 - has_many :comments
-
-## postsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|title|text|null: false|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- has_many :comments
-- has_many :posts_tags
-- has_many  :tags,  through:  :posts_tags
