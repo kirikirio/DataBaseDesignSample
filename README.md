@@ -30,6 +30,7 @@
 |name|string|null: false|
 ### Association
 - has_many :messeages
+-has_many :group_users
 - has_many  :users,  through:  :groups_users
 
 ## groups_users
