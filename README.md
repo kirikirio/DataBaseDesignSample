@@ -1,3 +1,5 @@
+# README
+
 # chat-SPACE DB設計
 ## usersテーブル
 |Column|Type|Options|
@@ -28,3 +30,5 @@
 ### Association
 - has_many :posts
 - has_many :users
+
+## how to use GitHub Desktop
