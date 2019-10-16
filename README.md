@@ -8,7 +8,7 @@
 |nickname|string|null: false|
 ### Association
 - has_many :messeages
-- has_many  :groups,  through:  :groups_user
+- has_many  :groups,  through:  :groups_users
 
 ## messeagesテーブル
 |Column|Type|Options|
@@ -19,6 +19,8 @@
 ### Association
 - belongs_to :user
 - belongs_to :group
+- belongs_to :groups_users
+
 
 
 ## groupsテーブル
@@ -28,9 +30,9 @@
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :messeages
-- has_many  :users,  through:  :groups_user
+- has_many  :users,  through:  :groups_users
 
-## groups_user
+## groups_users
 |Column|Type|Options|
 |------|----|-------|
 |group_id|integer|null: false, foreign_key: true|
@@ -38,3 +40,4 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
+- has_many :messeages
