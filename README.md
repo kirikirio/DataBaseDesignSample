@@ -1,4 +1,3 @@
-# README
 
 # chat-SPACE DB設計
 ## usersテーブル
@@ -8,10 +7,10 @@
 |password|string|null: false|
 |nickname|string|null: false|
 ### Association
-- has_many :posts
-- belongs_to :group
+- has_many :messeages
+- has_many  :groups,  through:  :groups_user
 
-## postsテーブル
+## messeagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text||
@@ -25,10 +24,17 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|text|null: false|
+|name|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :posts
-- has_many :users
+- has_many :messeages
+- has_many  :users,  through:  :groups_user
 
-## how to use GitHub Desktop
+## groups_user
+|Column|Type|Options|
+|------|----|-------|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :group
+- belongs_to :user
